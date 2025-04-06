@@ -1,0 +1,13 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "roots": [
+    "<rootDir>/test/e2e"
+  ],
+  "testMatch": [
+    "**/*.e2e.ts"
+  ],
+  "transform": {
+    "^.+\\.ts$": "ts-jest"
+  }
+}

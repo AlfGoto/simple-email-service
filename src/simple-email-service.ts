@@ -3,6 +3,7 @@ import * as apigw from "aws-cdk-lib/aws-apigateway"
 import * as lambda from "aws-cdk-lib/aws-lambda"
 import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs"
 import { Construct } from "constructs"
+import { MailCatcher } from "mail-catcher"
 
 export class MyStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -25,5 +26,7 @@ export class MyStack extends cdk.Stack {
     new apigw.LambdaRestApi(this, "simple-email-service-API", {
       handler: fn,
     })
+
+    new MailCatcher(this, "MailCatcher", "contact@alfredgauthier.com")
   }
 }

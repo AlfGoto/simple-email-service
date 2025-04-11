@@ -10,7 +10,9 @@ test("Test one mail", async () => {
   const random = Math.random().toString()
   await fetch(apiUrl + random)
 
-  const mailEvent = await waitForMailEvent()
+  const mailEvent = await waitForMailEvent({
+    filter: { subject: random },
+  })
   expect(mailEvent.subject).toMatch(random)
 })
 
@@ -22,8 +24,7 @@ test("Test on of two mails", async () => {
   await fetch(apiUrl + random)
 
   const mailEvent = await waitForMailEvent({
-    filter: (msg) =>
-      JSON.parse(msg.Message).mail.commonHeaders.subject === random,
+    filter: { subject: random },
   })
   expect(mailEvent.subject).toMatch(random)
 })

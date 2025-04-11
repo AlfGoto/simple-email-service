@@ -46,7 +46,8 @@
     "@aws-sdk/client-ses": "^3.782.0",
     "aws-cdk-lib": "^2.1.0",
     "constructs": "^10.0.5",
-    "hono": "^4.7.5"
+    "hono": "^4.7.5",
+    "mail-catcher": "file:../mail-catcher"
   },
   "license": "Apache-2.0",
   "publishConfig": {
